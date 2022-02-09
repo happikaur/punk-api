@@ -10,7 +10,7 @@ const BeerCard = (props) => {
     <div className='beer'>
       <img className='beer__size' src={image} alt="" />
       <h2>{name}</h2>
-      <p>{description}</p>
+      <p className='beer__description'>{description}</p>
     </div>
   )
 }

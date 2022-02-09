@@ -1,10 +1,17 @@
 import React from 'react';
-import './Navbar.scss';
+import './NavBar.scss';
+import FilterItem from '../../components/FilterItem/FilterItem';
 
-const Navbar = () => {
+const NavBar = (props) => {
+  const { filterItems } = props;
+
+  const alcoholFilters = filterItems.map(filterName => <FilterItem alcoholRange={filterName}/>)
+
   return (
-    <div>Navbar</div>
+    <div className='navbar'>
+      {alcoholFilters}
+    </div>
   )
 }
 
-export default Navbar
+export default NavBar
