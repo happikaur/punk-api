@@ -1,0 +1,9 @@
+.beer {
+  border: 2px solid black;
+  
+
+  &__size {
+    width: 75px;
+    height: 100px;
+  }
+}
