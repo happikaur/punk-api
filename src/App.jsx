@@ -8,23 +8,32 @@ import BeersData from './data/beers';
 // import BeerCard  from './components/BeerCard/BeerCard';
 
 function App() {
-  const [beers] = useState(BeersData);
+  const [beers, setBeers] = useState(BeersData);
 
 
-  const highABV = () => beers.filter(beer => beer.abv > 6);
-  console.log(highABV);
+  const highABV = () => {
+    const filteredHigh = beers.filter(beer => beer.abv > 6);
+    setBeers(filteredHigh);
+  }
+
   
-  const classicRange = () => beers.filter(beer => beer.abv >= 5 && beer.abv < 6);
-  console.log(classicRange);
+  const classicRange = () => {
+    const filteredClassic = beers.filter(beer => beer.abv >= 5 && beer.abv < 6); 
+    setBeers(filteredClassic);
+  }
 
-  const acidicPH = () => beers.filter(beer => beer.abv >= 4 && beer.abv < 5);
-  console.log(acidicPH);
-
-  console.log(beers);
+  const acidicPH = () => {
+    const filteredAcidic = beers.filter(beer => beer.ph < 4);
+    setBeers(filteredAcidic);
+  }
 
   return (
     <div className="App">
-      <NavBar filterItems={['High ABV', 'Classic Range', 'Acidic PH']}/>
+      <NavBar filterItems={[
+        {name:'High ABV (>6.0%)', filteredAlcohol:() => highABV()},
+        {name:'Classic Range', filteredAlcohol:() => classicRange() },
+        {name:'Acidic (ph < 4)', filteredAlcohol:() => acidicPH()}
+        ]}/>
       <Main beersArr={beers}/>      
     </div>
   );

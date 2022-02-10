@@ -1,13 +1,13 @@
 import React from 'react'
 
 const FilterItem = (props) => {
-  const { alcoholRange } = props;
+  const { alcoholRange, filteredAlcohol } = props;
 
   return (
     <div>
       <p>
-        {alcoholRange}
-        <input type='checkbox' />
+        {alcoholRange} 
+        <input type='checkbox' onChange={filteredAlcohol}/>
       </p>
       
     </div>
