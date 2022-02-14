@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
+import './FilterItem.scss';
+
 
 const FilterItem = (props) => {
   const { alcoholRange, filteredAlcohol } = props;
 
   return (
     <div>
-      <p>
+      <p className='filter-by'>
         {alcoholRange} 
-        <input type='checkbox' onChange={filteredAlcohol}/>
+        <input className='filter-by__checkbox' type='checkbox' onChange={filteredAlcohol}/>
       </p>
       
     </div>

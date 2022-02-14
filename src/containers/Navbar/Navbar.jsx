@@ -10,7 +10,7 @@ const NavBar = (props) => {
 
   return (
     <div className='navbar'>
-      <h1>Best Beers</h1>
+      <h1 className='navbar__title'>Best Beers</h1>
       <SearchBox searchFilter={searchFilter}/>
       {alcoholFilters}
     </div>
