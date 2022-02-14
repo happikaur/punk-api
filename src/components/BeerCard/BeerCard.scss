@@ -1,17 +1,29 @@
 .beer {
-  border: 2px solid rgb(4, 4, 73);
+  border: 2px solid #830503;
   margin: 10px;
-  padding: 10px;
-  border-radius: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  &:hover {
+    background-color: #ca9333;
+    box-shadow: 4px 4px 4px #4e4d4d;
+  }
 
   &__size {
     width: 75px;
     height: 150px;
   }
   &__description {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
+    max-height: 150px;  
+    overflow-y: scroll;
+  }
+  p::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  p::-webkit-scrollbar-thumb {
+    background: #434343;
+    border-radius: 16px;
+    box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%), inset -2px -2px 2px rgb(0 0 0 / 25%);
   }
 }
