@@ -2,6 +2,7 @@ import React from 'react';
 import './NavBar.scss';
 import FilterItem from '../../components/FilterItem/FilterItem';
 import SearchBox from '../../components/SearchBox/SearchBox';
+import FiltersList from '../../components/FiltersList/FiltersList';
 
 const NavBar = (props) => {
   const { filterItems, searchFilter } = props;
@@ -10,16 +11,12 @@ const NavBar = (props) => {
 
   return (
     <div className='navbar'>
-      <h1 className='navbar__title'>Best Beers</h1>
+      <h1 className='navbar__title'>Best Brewdog's Beers</h1>
       <SearchBox searchFilter={searchFilter}/>
-      {alcoholFilters}
+      <FiltersList filterElements={alcoholFilters} />
     </div>
   )
 }
 
 export default NavBar;
-
-// Heading / name for the nav
-// search bar in nav
-// scrolling thingy for the abvs, acidity
 

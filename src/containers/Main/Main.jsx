@@ -1,6 +1,5 @@
 import React from 'react'
 import './Main.scss';
-// import CardList from '../../components/CardList/CardList;
 import BeerCard from '../../components/BeerCard/BeerCard';
 
 const Main = (props) => {

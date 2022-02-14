@@ -6,7 +6,7 @@ const SearchBox = (props) => {
 
   return (
     <div>
-      <input className='search-box' type="search" onInput={searchFilter}/>
+      <input className='search-box' placeholder='Search for Beer...' type="search" onInput={searchFilter}/>
     </div>
   )
 }
